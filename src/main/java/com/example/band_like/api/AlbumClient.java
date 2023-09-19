@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.UUID;
 
-@FeignClient("COMMUNITYMEMBER-SERVICE")
+@FeignClient("BAND-ALBUM-SERVICE")
 public interface AlbumClient {
     @PutMapping("/api/v1/album/likeCountUpdate/{albumId}")
     public void updateLikeCount(@PathVariable("albumId") UUID albumId,

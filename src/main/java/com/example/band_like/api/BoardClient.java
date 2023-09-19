@@ -8,9 +8,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.UUID;
 
-@FeignClient("BOARD-SERVICE")
+@FeignClient("BAND-BOARD-SERVICE")
 public interface BoardClient {
     @PutMapping("/api/v1/board/likeCountUpdate/{boardId}")
-    public void updateLikeCount(@PathVariable("boardId") UUID boardId,
-                                @RequestBody Integer count);
+    void updateLikeCount(@PathVariable("boardId") UUID boardId, @RequestBody Integer count);
 }

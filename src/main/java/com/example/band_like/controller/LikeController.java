@@ -15,6 +15,6 @@ public class LikeController {
 
     @PostMapping
     public void likeCount(@RequestBody LikeRequest request) {
-        likeService.likeCount( request);
+        likeService.likeCount(request);
     }
 }

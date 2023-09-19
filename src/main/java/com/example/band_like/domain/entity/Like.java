@@ -9,7 +9,10 @@ import java.util.UUID;
 @Builder @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "likes")
+@Table(
+        name = "likes",
+        indexes = @Index(name = "idx_target_member", columnList = "targetId,memberId")
+)
 public class Like {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

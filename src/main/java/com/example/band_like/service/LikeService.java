@@ -32,7 +32,7 @@ public class LikeService {
                   albumClient.updateLikeCount(likeRequest.getTargetId(), - 1);
               }
         } else {
-              likeRepository.save(new Like(null,likeRequest.getTargetId(), likeRequest.getMemberId()));
+              likeRepository.save(Like.builder().targetId(likeRequest.getTargetId()).memberId(likeRequest.getMemberId()).build());
               if (target.equals("board")) {
                   boardClient.updateLikeCount(likeRequest.getTargetId(), 1);
               } else {
